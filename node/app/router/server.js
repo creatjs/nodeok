@@ -29,22 +29,21 @@ function start(route, handle) {
 
         }else{
             //设置全局变量，访问全局唯一变量，锁住。
-            Globles = new getGloble();
-            var getpath = Globles.getPath();
-            console.log('getpath',getpath,typeof getpath,typeof  pathname);
+            //Globles = new getGloble();
+            //var getpath = Globles.getPath();
             //没办法获取到../../
-            var resultPath = pathname.indexOf("plug-in");
-            var relativePath;
-            if(resultPath>0){
-                relativePath = path.join(getpath,'../../'+pathname);
-            }else{
-                relativePath = path.join(getpath,pathname);
-
-            }
-            console.log('from到to的相对路径-----',relativePath);
+            //var resultPath = pathname.indexOf("plug-in");
+            //var relativePath;
+            //if(resultPath>0){
+            //    relativePath = path.join(getpath,'../../'+pathname);
+            //}else{
+            //    relativePath = path.join(getpath,pathname);
+            //
+            //}
+            //console.log('from到to的相对路径-----',relativePath);
 
             // 取得文件路径
-            var filePath = path.resolve(dirname,relativePath);
+            var filePath = path.resolve(dirname,'../'+pathname);
             console.log('取得文件路径---------',filePath);
 
             //var filePath = ; //获的绝对路径
@@ -55,7 +54,7 @@ function start(route, handle) {
 
     }
 
-    http.createServer(onRequest).listen(80,'120.76.122.110');
+    http.createServer(onRequest).listen(8888);
     console.log("---服务器已经启动---.");
     //127.0.0.1
     //120.76.122.110

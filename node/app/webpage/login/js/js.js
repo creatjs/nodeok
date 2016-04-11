@@ -6,7 +6,6 @@
         return document.getElementById(id)
     };
     function bind(target, type, func) {
-        alert("aaaaaaaaaaaaa")
         if (target.addEventListener) {// 非ie 和ie9
             target.addEventListener(type, func, false);
         } else if (target.attachEvent) { // ie6到ie8

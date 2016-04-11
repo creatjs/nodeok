@@ -3,6 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <base href="webpage/blog/">
+
     <link rel="stylesheet" href="css/blog.css"/>
 </head>
 <body>
@@ -87,7 +89,7 @@
         console.log(args)
         var args = args||'html';
 
-        var url = obj!=='newBoxContent'?"/tempList/"+args+".html":args
+        var url = obj!=='newBoxContent'?"tempList/"+args+".html":args
 
         var ajx = new AJAX();
         ajx.init({

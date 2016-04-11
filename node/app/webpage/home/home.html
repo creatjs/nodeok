@@ -6,6 +6,7 @@
 		<meta name="Author" content="">
 		<meta name="Keywords" content="">
 		<meta name="Description" content="">
+		<base href="webpage/home/">
 		<title>Document</title>
 		<link rel="stylesheet" href="css/css.css"/>
 	</head>
@@ -48,11 +49,11 @@
 <!-- end…… -->
 <div class="footer">
 	<div class="lf">
-		<a href="#">ITOTOO</a>
+		<a href="javascript:void(0)">ITOTOO</a>
 	</div>
 	<div class="rf bar">
-		<a href="">GAME</a>
-		<a href="blogs">ART</a>
+		<a href="javascript:void(0)">GAME</a>
+		<a href="/blog">ART</a>
 		<a href="/blog">BLOG</a>
 		<a href="/login" class="loginBg">LOG IN</a>
 	</div>
@@ -61,62 +62,5 @@
 <script src="../../plug-in/tweenjs.js"></script>
 <script src="js/js.js"></script>
 
-<script>
-	//完整形式
-	//document.cookie = "userIco=value;expires=过期时间;path=路径访问;domain=域名访问;secure=安全访问"
-
-	(function(){
-		window.Cookie = function(){};
-		Cookie.prototype = {
-			setCookie:function(user,value,expires,path,domain,secure){
-				var cookie = encodeURIComponent(user)+ "=" + encodeURIComponent(value);
-				if (expires instanceof Date) {
-					cookie += ";expires=" + expires;
-				};
-				if (path) {
-					cookie += ";path=" + path;
-				};
-				if (domain) {
-					cookie += ";domain=" + domain;
-				};
-				if (secure) {
-					cookie += ";secure" ;
-				};
-				document.cookie = cookie;
-			},
-			getCookie:function(name){
-				var cookieName = encodeURIComponent(name) + "=";
-				var cookieStart = document.cookie.indexOf(cookieName);
-				var cookieValue = null;
-
-				if (cookieStart >-1) {
-					var cookieEnd = document.cookie.indexOf(";",cookieStart);
-					if (cookieEnd === -1) {
-						cookieEnd = document.cookie.length;
-					};
-					var startNnm = cookieStart+cookieName.length;
-					cookieValue =  decodeURIComponent(document.cookie.substring(startNnm,cookieEnd));
-				};
-				return cookieValue
-			},
-			setTimeCookie:function(day){
-				var date = null;
-				if (typeof day === "number" && day > 0) {
-					date = new Date();
-					date.setDate(date.getDate()+day);
-				}else{
-					throw new Error("设置的过期时间有错误")
-				}
-				return date;
-			}
-		}
-
-	})(window);
-
-	var yesCookie = new Cookie();
-	yesCookie.setCookie('user','bbbbbbbbbbb');
-	alert(yesCookie.getCookie("user"));
-
-</script>
 
 </body></html>

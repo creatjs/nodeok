@@ -37,24 +37,19 @@ function home(response, request){
     console.log('//获得类型',type)
     FServer.filesLoad(filePath, type, request, response);
     console.log('90909090909090',path.dirname(router.home))
-    //设置当前的应用的路径
-    Globles = new getGloble();
-    Globles.setPath(path.dirname(router.home));
-    Globles.getPath();
+    ////设置当前的应用的路径
+    //Globles = new getGloble();
+    //Globles.setPath(path.dirname(router.home));
+    //Globles.getPath();
 
 }
-//主页s
+//blog
 function blog(response, request){
     var filePath = path.resolve(dirname,router.blog);
     console.log("~~~请求处理程序被称为“开始”~~~",filePath);
     var type = mime.lookup(filePath); //获得类型
     console.log('//获得类型',type)
     FServer.filesLoad(filePath, type, request, response);
-    //设置当前的应用的路径
-    Globles = new getGloble();
-    console.log('设置当前的应用的路径',path.dirname(router.blog))
-    Globles.setPath(path.dirname(router.blog));
-    Globles.getPath();
 }
 
 //登录
@@ -103,12 +98,6 @@ function login(response, request) {
         console.log('//获得类型',type)
         FServer.filesLoad(filePath, type, request, response);
     }
-    //设置当前的应用的路径
-    Globles = new getGloble();
-    Globles.setPath(path.dirname(router.login));
-    Globles.getPath();
-
-
 
 }
 //注册
@@ -165,10 +154,6 @@ function logup(response, request) {
         console.log('//获得类型',type)
         FServer.filesLoad(filePath, type, request, response);
     }
-    //设置当前的应用的路径
-    Globles = new getGloble();
-    Globles.setPath(path.dirname(router.logup));
-    Globles.getPath();
 
 }
 

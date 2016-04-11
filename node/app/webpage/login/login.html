@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>登录itooo</title>
+    <base href="webpage/login/">
     <link rel="stylesheet" href="css/style.css"/>
 
 </head>
@@ -15,8 +16,10 @@
     <form action="/login" method="post" class="form_console">
         <input type="text" name="user" class="input margin_2_tb radius_5"/>
         <input type="password" name="password" class="input  margin_2_tb radius_5"/>
-        <a href="/logup" class="resetPass">Forget Password?</a>
+        <a href="javascript:void(0)" class="resetPass">Forget Password?</a>
         <button type="button" id="subm" class="button radius_0 btn_sub">></button>
+        <a href="/logup" class="resetPass">Sign up?</a>
+
     </form>
 
 </div>
