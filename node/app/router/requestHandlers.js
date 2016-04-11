@@ -12,6 +12,7 @@ var util = require("util");
 
 var FServer = require("./FServer");     //响应，返回服务
 var getMongodb = require('./getMongodb/getMongodb');    //读取数据库
+var getGloble = require('./getGloble/getGloble');    //设置全局变量
 
 
 
@@ -23,6 +24,7 @@ var filename = __filename;
 var router = {
 
     home:"../webpage/home/home.html",
+    blog:"../webpage/blog/blog.html",
     login:"../webpage/login/login.html",
     logup:"../webpage/logup/logup.html"
 
@@ -34,7 +36,27 @@ function home(response, request){
     var type = mime.lookup(filePath); //获得类型
     console.log('//获得类型',type)
     FServer.filesLoad(filePath, type, request, response);
+    console.log('90909090909090',path.dirname(router.home))
+    //设置当前的应用的路径
+    Globles = new getGloble();
+    Globles.setPath(path.dirname(router.home));
+    Globles.getPath();
+
 }
+//主页s
+function blog(response, request){
+    var filePath = path.resolve(dirname,router.blog);
+    console.log("~~~请求处理程序被称为“开始”~~~",filePath);
+    var type = mime.lookup(filePath); //获得类型
+    console.log('//获得类型',type)
+    FServer.filesLoad(filePath, type, request, response);
+    //设置当前的应用的路径
+    Globles = new getGloble();
+    console.log('设置当前的应用的路径',path.dirname(router.blog))
+    Globles.setPath(path.dirname(router.blog));
+    Globles.getPath();
+}
+
 //登录
 function login(response, request) {
     var _user = 'login';
@@ -81,6 +103,10 @@ function login(response, request) {
         console.log('//获得类型',type)
         FServer.filesLoad(filePath, type, request, response);
     }
+    //设置当前的应用的路径
+    Globles = new getGloble();
+    Globles.setPath(path.dirname(router.login));
+    Globles.getPath();
 
 
 
@@ -139,6 +165,10 @@ function logup(response, request) {
         console.log('//获得类型',type)
         FServer.filesLoad(filePath, type, request, response);
     }
+    //设置当前的应用的路径
+    Globles = new getGloble();
+    Globles.setPath(path.dirname(router.logup));
+    Globles.getPath();
 
 }
 
@@ -149,3 +179,4 @@ function logup(response, request) {
 exports.login = login;
 exports.logup = logup;
 exports.home = home;
+exports.blog = blog;

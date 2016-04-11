@@ -6,13 +6,18 @@ var fs   = require('fs');
 var mime = require('mime');
 
 function filesLoad(filePath, type, req, res){
+
     fs.exists(filePath, function(exists){
+        //console.log("~~~获的绝对路径“开始”~~~",exists,filePath);
+
         if ( !exists ) {
             res.writeHead(404, {'Content-Type': 'text/plain'});
             // res.write();
             res.end();
         } else {
+
             fs.readFile(filePath, function(err, file){
+
                 if ( err ) {
                     res.writeHead(500, {'Content-Type': 'text/plain'});
                     // res.write();

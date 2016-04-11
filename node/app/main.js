@@ -9,6 +9,7 @@ var handle = {}
 
 handle["/"] = requestHandlers.home;
 handle["/home"] = requestHandlers.home;
+handle["/blog"] = requestHandlers.blog;
 handle["/login"] = requestHandlers.login;//登录
 handle["/logup"] = requestHandlers.logup;//注册
 

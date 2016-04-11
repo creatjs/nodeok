@@ -1,19 +1,122 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>登录</title>
-    <link rel="stylesheet" href="webpage/login/css/style.css"/>
-
-</head>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/css.css"/>
+	</head>
 <body>
+<div class="userMessage">
+	<img src="img/userIco.jpg" alt=""/>
+</div>
+<!-- 焦点图模块 -->
+<!--<div class="screen">-->
+	<!--<div id="screen_1" class="screenC Cbg1">screen1</div>-->
+	<!--<div id="screen_2" class="screenC Cbg2">screen2</div>-->
+<!--</div>-->
+<div class="screen">
+	<div id="fodder">
+		<ul>
+			<li><img src="img/img1.jpg" /></li>
+			<li><img src="img/img2.jpg" /></li>
+			<li><img src="img/img3.jpg" /></li>
+			<li><img src="img/img4.jpg" /></li>
+			<li><img src="img/img5.jpg" /></li>
+			<li><img src="img/img6.jpg" /></li>
+			<li><img src="img/img7.jpg" /></li>
+		</ul>
+	</div>
+	<div id="anniu" class="anniu">
+		<ul>
+			<li class="bg"></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+		</ul>
+	</div>
+</div>
+<button id="prev">prev</button>
+<button id="next">next</button>
 
+<!-- end…… -->
+<div class="footer">
+	<div class="lf">
+		<a href="#">ITOTOO</a>
+	</div>
+	<div class="rf bar">
+		<a href="">GAME</a>
+		<a href="blogs">ART</a>
+		<a href="/blog">BLOG</a>
+		<a href="/login" class="loginBg">LOG IN</a>
+	</div>
+</div>
 
+<script src="../../plug-in/tweenjs.js"></script>
+<script src="js/js.js"></script>
 
+<script>
+	//完整形式
+	//document.cookie = "userIco=value;expires=过期时间;path=路径访问;domain=域名访问;secure=安全访问"
 
-<button type="button" id="subm" class="button radius_0 btn_sub">home</button>
+	(function(){
+		window.Cookie = function(){};
+		Cookie.prototype = {
+			setCookie:function(user,value,expires,path,domain,secure){
+				var cookie = encodeURIComponent(user)+ "=" + encodeURIComponent(value);
+				if (expires instanceof Date) {
+					cookie += ";expires=" + expires;
+				};
+				if (path) {
+					cookie += ";path=" + path;
+				};
+				if (domain) {
+					cookie += ";domain=" + domain;
+				};
+				if (secure) {
+					cookie += ";secure" ;
+				};
+				document.cookie = cookie;
+			},
+			getCookie:function(name){
+				var cookieName = encodeURIComponent(name) + "=";
+				var cookieStart = document.cookie.indexOf(cookieName);
+				var cookieValue = null;
 
+				if (cookieStart >-1) {
+					var cookieEnd = document.cookie.indexOf(";",cookieStart);
+					if (cookieEnd === -1) {
+						cookieEnd = document.cookie.length;
+					};
+					var startNnm = cookieStart+cookieName.length;
+					cookieValue =  decodeURIComponent(document.cookie.substring(startNnm,cookieEnd));
+				};
+				return cookieValue
+			},
+			setTimeCookie:function(day){
+				var date = null;
+				if (typeof day === "number" && day > 0) {
+					date = new Date();
+					date.setDate(date.getDate()+day);
+				}else{
+					throw new Error("设置的过期时间有错误")
+				}
+				return date;
+			}
+		}
 
+	})(window);
 
-</body>
-</html>
+	var yesCookie = new Cookie();
+	yesCookie.setCookie('user','bbbbbbbbbbb');
+	alert(yesCookie.getCookie("user"));
+
+</script>
+
+</body></html>

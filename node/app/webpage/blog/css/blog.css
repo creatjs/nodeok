@@ -1,0 +1,157 @@
+*{
+margin:0;
+padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: 100%;
+font-weight: normal;
+}
+a:hover, a:active {
+color: #cc0000;
+}
+a:link, a:visited {
+color: #14191e;
+}
+a:hover {
+color: #c9394a;
+}
+a:link, a:visited {
+color: #5e5e5e;
+}
+:link, :visited, ins {
+text-decoration: none;
+}
+a, input, button {
+outline: none;
+}
+.clearfix{
+display:block;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+body{
+font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+color: #14191e;
+}
+ol, ul {
+list-style: none;
+}
+/*-----------------------------------------------------------*/
+
+.user_frame{
+position:relative;
+width:920px;height:300px;
+margin:0 auto;
+background-color:#009F95;
+overflow:hidden;
+}
+.user_ico{
+position:relative;
+width:100px;height:100px;
+margin:48px auto 0;
+border-radius:50%;
+padding: 4px;
+background: #fff;
+background: rgba(255,255,255,0.3);
+}
+.user_name{
+display:block;
+position:relative;
+height:auto;
+margin-top: 6px;
+text-align: center;
+vertical-align: text-bottom;
+font-size: 22px;color: #fff;
+}
+.user_mess{
+margin-top: 4px;
+text-align: center;
+color: #fff;
+line-height: 18px;
+text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+/*-----------------------------------------------------------*/
+.main{
+width: 920px;
+margin: 20px auto;
+}
+.can_list {
+width: 920px;
+color: #656e73;
+margin: 20px auto;
+border-top:1px solid #e3e3e3;
+border-bottom:1px solid #e3e3e3;
+}
+.nav_row{
+padding: 15px 0 5px;
+border-bottom: 1px solid #edf1f2;
+}
+.nav_row .hd {
+height: 20px;
+line-height: 20px;
+font-size: 12px;
+color: #787d82;
+text-align: right;
+}
+.l {
+float: left;
+}
+.bd{
+margin-left: 70px;
+}
+
+.bd ul li{
+display: inline-block;
+margin: 0 13px;
+height: 20px;
+line-height: 20px;
+margin-bottom: 10px;
+padding: 0 6px;
+font-size: 12px;
+cursor:pointer;
+}
+
+.conter{
+position:relative;
+width: 600px;min-height:600px;
+clear:both;
+}
+
+.box1{
+position:absolute;
+width:500px;height:500px;
+clear:both;
+}
+.box1 ul li{
+display:block;
+height: 20px;
+line-height: 20px;
+margin: 0 13px;
+margin-bottom: 10px;
+padding: 10px 6px;
+font-size: 12px;
+border-bottom:1px solid #e3e3e3;
+cursor:pointer;
+}
+
+.title{
+padding:3px 7px;
+background-color:rgba(0,0,0,0.5);
+border-radius:8px;
+color:white;
+}
+
+.newBoxContent{
+position:fixed;top:0px;
+width:600px;height:100%;
+left:60%;margin-left:-300px;
+overflow:auto;
+clear:both;
+display:none;
+background-color:white;
+}

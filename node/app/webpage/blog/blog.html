@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/blog.css"/>
+</head>
+<body>
+<div class="user_frame clearfix">
+    <div class="user_ico"></div>
+    <div class="user_name"><h1>来源于自然</h1></div>
+    <div class="user_mess">万物生长,技术再好，也是要学习的，学会分享</div>
+</div>
+
+
+<div class="main">
+    <div id="select_s" class="can_list">
+        <div class="nav_row">
+            <span class="hd l">前端开发：</span>
+            <div class="bd">
+                <ul>
+                    <li>HTML</li>
+                    <li>Html5</li>
+                    <li>CSS3</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>ECMA6</li>
+                    <li>WebApp</li>
+                    <li>Node-webkit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_row">
+            <span class="hd l">后端开发：</span>
+            <div class="bd">
+                <ul>
+                    <li>C</li>
+                    <li>Linux</li>
+                    <li>Nodejs</li>
+                    <li>Mongodb</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_row">
+            <span class="hd l">前端工具：</span>
+            <div class="bd">
+                <ul>
+                    <li>Github</li>
+                    <li>Grunt</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_row">
+            <span class="hd l">工具：</span>
+            <div class="bd">
+                <ul>
+                    <li>Photoshop</li>
+                    <li>Vim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="conter" class="conter">
+        <div id="newBox" class="box1" data-value="div">
+        </div>
+
+
+    </div>
+
+</div>
+
+<!--<div id="newBoxContent" class="newBoxContent">-->
+<!--</div>-->
+
+
+
+
+<script src="../../plug-in/ajax.js"></script>
+<script src="js/SelectLoad.js"></script>
+<script src="js/js.js"></script>
+
+<script>
+
+    function loadTemp(obj,args){
+        console.log(obj)
+        console.log(args)
+        var args = args||'html';
+
+        var url = obj!=='newBoxContent'?"/tempList/"+args+".html":args
+
+        var ajx = new AJAX();
+        ajx.init({
+            method:"get",
+            url:url,
+            data:{},
+            success:function (text) {
+                document.getElementById(obj).innerHTML = '';
+                document.getElementById(obj).innerHTML += text;
+            },
+            async:true
+        });
+    }
+    loadTemp('newBox','html')
+
+</script>
+</body>
+</html>
