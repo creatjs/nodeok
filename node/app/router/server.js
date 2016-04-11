@@ -54,7 +54,7 @@ function start(route, handle) {
 
     }
 
-    http.createServer(onRequest).listen(80,'120.76.122.110');
+    http.createServer(onRequest).listen(8888);
     console.log("---服务器已经启动---.");
     //127.0.0.1
     //120.76.122.110
