@@ -1,0 +1,84 @@
+*{
+margin:0;
+padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: 100%;
+font-weight: normal;
+}
+a:hover, a:active {
+color: #cc0000;
+}
+a:link, a:visited {
+color: #14191e;
+}
+a:hover {
+color: #c9394a;
+}
+a:link, a:visited {
+color: #5e5e5e;
+}
+:link, :visited, ins {
+text-decoration: none;
+}
+a, input, button {
+outline: none;
+}
+.clearfix{
+display:block;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+body{
+font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+color: #14191e;
+}
+ol, ul {
+list-style: none;
+}
+/*-----------------------------------------------------------*/
+
+.user_frame{
+position:relative;
+width:920px;height:300px;
+margin:0 auto;
+background-color:#009F95;
+overflow:hidden;
+}
+.user_ico{
+position:relative;
+width:100px;height:100px;
+margin:48px auto 0;
+border-radius:50%;
+padding: 4px;
+background: #fff;
+background: rgba(255,255,255,0.3);
+}
+.user_ico img{
+position:relative;
+width:100px;height:100px;
+border-radius:50%;
+}
+
+.user_name{
+display:block;
+position:relative;
+height:auto;
+margin-top: 6px;
+text-align: center;
+vertical-align: text-bottom;
+font-size: 22px;color: #fff;
+}
+.user_mess{
+margin-top: 4px;
+text-align: center;
+color: #fff;
+line-height: 18px;
+text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+/*-----------------------------------------------------------*/

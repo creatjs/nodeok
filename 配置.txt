@@ -1,0 +1,13 @@
+
+#linux启动
+
+mongod --dbpath /home/webgl/Host_Env/mongodata/data  --logpath /home/webgl/Host_Env/mongodata/mongodb.log  --fork
+
+mongod --dbpath /root/itotoo/mongodata/data  --logpath /root/itotoo/mongodata/log/mongodb.log --fork
+
+
+node '/root/itotoo/nodeok/node/app/main.js'
+
+https://github.com/creatjs/nodeok.git
+
+git push -u origin master

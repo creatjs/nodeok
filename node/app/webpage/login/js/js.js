@@ -16,6 +16,7 @@
     }
     bind(_id("subm"),'click',fn)
     function fn(){
+
         var user =document.getElementsByName('user')[0].value;
         var password =document.getElementsByName('password')[0].value;
         var ajax = new AJAX();
@@ -27,11 +28,12 @@
                 password:password
             },
             success:function (text) {
+                console.log('用户名或密码错误',text)
                 if(text === 'true'){
                     //写入cookie
-
-                    //跳转到首页
-                    window.location.href = "/home";
+                    setCookie();
+                    //跳转到用户页面
+                    window.location.href = "/user/"+user;
                 }
                 else{
                     //否则不动
@@ -42,6 +44,15 @@
             },
             async:true
         });
+        //写入用户到cookie
+        function setCookie(){
+            var yesCookie = new Cookie();
+            var content = {
+                user:user,
+                password:password
+            }
+            yesCookie.setCookie('itotooUser',JSON.stringify(content));
+        }
     }
 
 

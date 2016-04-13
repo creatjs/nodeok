@@ -8,11 +8,11 @@ var mime = require('mime');
 function filesLoad(filePath, type, req, res){
 
     fs.exists(filePath, function(exists){
-        //console.log("~~~获的绝对路径“开始”~~~",exists,filePath);
+        console.log("~~~获的绝对路径“开始”~~~",exists,filePath);
 
         if ( !exists ) {
             res.writeHead(404, {'Content-Type': 'text/plain'});
-            // res.write();
+            res.write("FServer响应返回的文件404");
             res.end();
         } else {
 

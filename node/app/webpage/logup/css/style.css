@@ -9,8 +9,12 @@ input{
 display:block;
 outline:none;
 }
-
-
+.green{
+border-color:green;
+}
+.red{
+border-color:red;
+}
 
 /*
 

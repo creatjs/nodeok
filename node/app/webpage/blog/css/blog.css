@@ -59,6 +59,11 @@ padding: 4px;
 background: #fff;
 background: rgba(255,255,255,0.3);
 }
+.user_ico img{
+position:relative;
+width:100px;height:100px;
+border-radius:50%;
+}
 .user_name{
 display:block;
 position:relative;
